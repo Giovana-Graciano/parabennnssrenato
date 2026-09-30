@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061b12">
+<title>★ RENATINHO BIRTHDAY INTERNET ★</title>
+<link rel="stylesheet" href="style.css?v=14">
+
+<style>
+/* V10 readability + heart finale */
+.card-title,.memory-card h3,.memory-card .tag,.card-label,.memory-card strong{font-family:Arial,sans-serif!important;color:#fff!important;text-shadow:2px 2px 0 #111,0 0 5px #000!important;font-weight:900!important;letter-spacing:.4px}
+.memory-card .tag{background:#111!important;border:3px solid #fff!important;padding:4px 7px!important;display:inline-block}
+.final-unlock{background:linear-gradient(135deg,#fff0f5,#ffd2dc,#b8ffd0)!important;position:relative;overflow:hidden}
+.final-unlock:before,.final-unlock:after{content:"♥";position:absolute;font-size:42px;opacity:.28;animation:heartFloat 3s infinite ease-in-out}
+.final-unlock:before{left:7%;bottom:8%}.final-unlock:after{right:9%;top:8%;animation-delay:1s}
+.final-inner{background:radial-gradient(circle at 50% 30%,rgba(255,80,130,.25),transparent 30%),linear-gradient(135deg,#fff,#ffd6e1)!important}
+.final-lock{font-size:68px!important;animation:heartBeat 1s infinite}
+.final-inner h3{color:#8d1738;text-shadow:2px 2px #fff}
+@keyframes heartBeat{50%{transform:scale(1.18);filter:drop-shadow(0 0 14px #ff4d75)}}@keyframes heartFloat{50%{transform:translateY(-20px) rotate(10deg)}}
+</style>
+<style>
+.legacy-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.slideshow-frame{width:min(240px,90%)!important;height:170px!important;position:relative}
+.slideshow-frame img{width:100%;height:100%;object-fit:cover}
+.photo-caption{font-size:9px;min-height:28px;padding:4px 8px;color:#111;font-weight:bold}
+.photo-controls{display:flex;justify-content:center;gap:5px;padding:7px;flex-wrap:wrap}
+.capsule-stats{background:#111;color:#8dffb4;font:10px monospace;padding:10px;margin:10px 0;border:4px ridge #fff;line-height:1.7}
+.capsule-content{margin-top:10px}
+@media(max-width:900px){.legacy-grid-3{grid-template-columns:1fr!important}}
+</style>
+
+<style id="v18-nav-style">
+.v18-site-nav{position:fixed;right:12px;top:12px;z-index:8500;display:flex;gap:6px}
+.v18-site-nav a,.v18-create-nav a{
+  display:inline-block;font-family:"Courier New",monospace;font-size:10px;
+  font-weight:900;text-decoration:none;padding:7px 10px;
+  background:linear-gradient(#fff,#d8eadc);color:#102c1b;
+  border:4px outset #fff;box-shadow:3px 3px #111;cursor:pointer;
+}
+.v18-site-nav a:active,.v18-create-nav a:active{border-style:inset;transform:translate(2px,2px)}
+</style>
+
+<style id="v19-old-internet-zone">
+/* V19 — OLD INTERNET ZONE layout only */
+#legacy .legacy-grid,
+#oldInternetZone .legacy-grid,
+.legacy-zone .legacy-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  padding:16px!important;
+}
+#legacy .retro-app,
+#oldInternetZone .retro-app,
+.legacy-zone .retro-app{
+  min-width:0!important;
+  width:100%!important;
+  height:100%!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+#legacy .retro-app .box-head,
+#oldInternetZone .retro-app .box-head,
+.legacy-zone .retro-app .box-head{
+  min-height:42px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1.15!important;
+  padding:8px 6px!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+}
+#legacy .retro-app > *,
+#oldInternetZone .retro-app > *,
+.legacy-zone .retro-app > *{
+  max-width:100%;
+  box-sizing:border-box;
+}
+@media (max-width:1050px){
+  #legacy .legacy-grid,
+  #oldInternetZone .legacy-grid,
+  .legacy-zone .legacy-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+@media (max-width:680px){
+  #legacy .legacy-grid,
+  #oldInternetZone .legacy-grid,
+  .legacy-zone .legacy-grid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:10px!important;
+  }
+}
+</style>
+
+<style id="v20-old-zone-fix">
+/* The zone is a normal container; ONLY the app row is a grid. */
+#legacy.legacy-zone,
+.legacy-zone.retro-zone-fixed{
+  display:block!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  padding:0!important;
+}
+#legacy .legacy-grid,
+.legacy-zone .legacy-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  padding:16px!important;
+  margin:0!important;
+  align-items:stretch!important;
+}
+#legacy .retro-app,
+.legacy-zone .retro-app{
+  width:100%!important;
+  min-width:0!important;
+  min-height:175px!important;
+  height:auto!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+#legacy .app-title,
+.legacy-zone .app-title{
+  min-height:40px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1.15!important;
+  padding:7px 6px!important;
+  box-sizing:border-box!important;
+  white-space:normal!important;
+}
+@media(max-width:1050px){
+  #legacy .legacy-grid,
+  .legacy-zone .legacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:680px){
+  #legacy .legacy-grid,
+  .legacy-zone .legacy-grid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:10px!important;
+  }
+}
+
+/* HOME belongs to the site header, not to the browser/page edge. */
+.v18-site-nav{
+  position:absolute!important;
+  right:10px!important;
+  top:10px!important;
+  z-index:20!important;
+  display:block!important;
+}
+.sitebar{position:relative!important}
+.v18-site-nav a{
+  display:inline-block!important;
+}
+</style>
+
+
+
+
+
+<style id="v24-home-style">
+/* V24 — standalone HOME shortcut, intentionally independent of header layout. */
+.desktop-home-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:10px 0 4px;
+  padding:0;
+  box-sizing:border-box;
+}
+.desktop-home{
+  display:inline-block;
+  font-family:"Courier New",monospace;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.8px;
+  text-decoration:none;
+  text-align:center;
+  color:#102c1b;
+  background:linear-gradient(#ffffff,#d9eadc);
+  border:4px outset #ffffff;
+  box-shadow:3px 3px 0 #111;
+  padding:8px 15px;
+  cursor:pointer;
+  text-shadow:1px 1px #fff;
+}
+.desktop-home:hover{
+  filter:brightness(1.08);
+  transform:translateY(-1px);
+}
+.desktop-home:active{
+  border-style:inset;
+  transform:translate(2px,2px);
+  box-shadow:1px 1px 0 #111;
+}
+</style>
+
+<style id="love-file-inside-style">
+.love-file-inside{margin:24px 0 0}.love-file-window{background:#e7eee7;color:#17311f;border:5px ridge #fff;box-shadow:8px 8px 0 #050b08;font-family:"Courier New",monospace}.love-file-titlebar{display:flex;justify-content:space-between;gap:15px;background:linear-gradient(#173f2a,#062415);color:#fff;padding:9px 12px;font-size:11px;font-weight:900;text-shadow:1px 1px #000}.love-file-body{display:grid;grid-template-columns:minmax(220px,38%) 1fr;gap:26px;padding:28px}.love-photo-frame{min-height:320px;display:flex;align-items:center;justify-content:center;background:#d6e0d6;border:5px inset #fff;position:relative;overflow:hidden}.love-photo-frame img{width:100%;height:100%;object-fit:cover;display:block}.love-photo-frame.photo-placeholder{background:repeating-linear-gradient(45deg,#d6e0d6 0 8px,#c8d3c8 8px 16px)}.photo-placeholder-text{text-align:center;font-size:18px;font-weight:900;line-height:1.7;color:#31553e}.love-photo-frame:not(.photo-placeholder) .photo-placeholder-text{display:none}.love-letter{background:#fffdf4;border:3px solid #b8b19b;padding:24px;box-shadow:4px 4px 0 #879187}.love-letter h2{margin:0 0 20px;font-family:Georgia,serif;font-size:28px;color:#173f2a}.love-letter p{font-family:Georgia,serif;font-size:17px;line-height:1.7;color:#302f2a;margin:0 0 18px}.love-signature{text-align:right!important;font-style:italic}@media(max-width:700px){.love-file-body{grid-template-columns:1fr;padding:18px}.love-photo-frame{min-height:260px}.love-letter{padding:18px}.love-letter p{font-size:15px}.love-file-titlebar{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="crt"></div>
+<div class="scan-noise"></div>
+<div class="cursor-spark" id="cursorSpark"></div>
+
+<section id="intro" class="screen intro-screen">
+  <div class="topbar"><span>RENATINHO_STUDIOS.EXE</span><span>● ONLINE&nbsp;&nbsp;|&nbsp;&nbsp;NETSCAPE 2004</span></div>
+  <div class="intro-window">
+    <div class="window-title"><span>★ FELIZ ANIVERSÁRIO, RENATO ★</span><span>_ □ X</span></div>
+    <div class="intro-content">
+      <div class="construction">⚠ UNDER CONSTRUCTION ⚠</div>
+      <div class="spark-row">✦ ★ ✧ ★ ✦ ★ ✧</div>
+      <div class="tiny blink">!!! INCOMING TRANSMISSION !!!</div>
+      <h1>FELIZ ANIVERSÁRIO <span>RENATO!!!</span></h1>
+      <div class="hero-avatar" aria-label="Renato">🧑🏻‍💻</div>
+      <div class="level-chip">PLAYER 01 • LEVEL 26 • HP ██████████</div>
+      <p class="intro-copy">★ ATENÇÃO, RENATINHO! ★<br>SEUS AMIGOS INVADIRAM A INTERNET DOS ANOS 2000 PRA TE DAR PARABÉNS.</p>
+      <div class="loading"><span>LOADING MEMORIES...</span><b><i></i></b><small>100% COMPLETE • NO VIRUSES* (*PROBABLY)</small></div>
+      <button id="startBtn" class="start-button">▶ ENTER THE INTERNET ◀</button>
+      <div class="marquee"><span>★ BEST VIEWED AT 800×600 ★ CLICK EVERYTHING ★ USE INTERNET EXPLORER ★ NEW!!! ★ FELIZ ANIVERSÁRIO!!! ★ FLU-MEMORY MODE: ON ★</span></div>
+      <div class="intro-foot">© 2000-2026 RENATINHO STUDIOS • MADE WITH TOO MUCH LOVE &amp; CSS</div>
+    </div>
+  </div>
+</section>
+
+<section id="site" class="screen site-screen hidden">
+  <div class="desktop">
+    <header class="sitebar">
+      <div class="brand"><b>RENATO</b><small>2000</small></div>
+      <div class="site-title"><span class="blink">★ SPECIAL EDITION ★</span><h2>FELIZ ANIVERSÁRIO, RENATO</h2><p>THE MOST ADVANCED BIRTHDAY WEBSITE OF 2004*</p></div>
+      <div class="status-box"><div>● ONLINE<br><b>VISITOR #000026</b></div></div>
+    </header>
+<div id="v24-home" class="desktop-home-wrap">
+  <a class="desktop-home" href="index.html">★ HOME ★</a>
+</div>
+
+    <div class="desktop-body">
+      <aside class="sidebar">
+        <div class="win-box tilted-left">
+          <div class="box-head">RENATINHO.EXE</div>
+          <div class="profile">
+            <div class="mini-avatar">🧑🏻‍💻</div>
+            <b>STATUS: AWESOME</b>
+            <span>LEVEL: +1 YEAR</span>
+            <span>MOOD: ★★★★★</span>
+          </div>
+        </div>
+
+        <div class="win-box">
+          <div class="box-head">NAVIGATION</div>
+          <button class="nav-btn" data-scroll="cards">★ MEMORY CARDS</button>
+          <button class="nav-btn" data-scroll="playlist">♫ MUSIC ZONE</button>
+          <button class="nav-btn" data-scroll="legacy">💾 OLD INTERNET ZONE</button>
+          <button class="nav-btn" data-scroll="future">✉️ POSTERITY MESSAGE</button>
+          <a class="nav-btn friend-link" href="create.html">✦ FRIEND CARD FACTORY</a>
+        </div>
+
+        <div class="win-box construction-box">
+          <div>⚠ UNDER<br>CONSTRUCTION ⚠</div>
+          <small>PLEASE EXCUSE<br>THE AWESOME</small>
+        </div>
+
+        <div class="visitor-counter">YOU ARE VISITOR<br><strong>#000013</strong><br><span>◉ ◉ ◉ ◉ ◉</span></div>
+      </aside>
+
+      <main class="main-column">
+        <section class="welcome win-box">
+          <div class="box-head">WELCOME_TO_RENATINHO_WORLD.HTML</div>
+          <div class="welcome-inner">
+            <div class="floating-emojis">💚 ✨ 🦖 ⚽ 💿 📖 ⭐</div>
+            <div class="welcome-text">
+              <div class="tiny">!!! SELECT YOUR MEMORY !!!</div>
+              <h3>MUITOS AMIGOS.<br><span>MUITOS CARTÕES.<br>UMA FASE NOVA.</span></h3>
+              <p>Cada cartão tem uma animação própria — e a quantidade de amigos é ilimitada. Clique, abra, aumente o som e deixe a internet de 2004 fazer o que a internet de 2026 já esqueceu.</p>
+            </div>
+            <div class="renatinho-stage">
+              <div class="halo"></div>
+              <div class="pixel-person" id="renatinhoAvatar" title="click me...">🧑🏻‍💻</div>
+              <div class="floating-label">RENATO<br><b>★ 26 ★</b></div>
+            </div>
+          </div>
+        </section>
+
+<section id="playlist" class="playlist-section win-box">
+          <div class="box-head">♫ RENATINHO_PLAYLIST.EXE</div>
+          <div id="playlistContent" class="playlist-content">
+            <div class="disc">💿</div>
+            <div><b>THE SOUNDTRACK IS WAITING</b><p>Spotify e Music Box aparecem aqui depois que os cartões forem publicados.</p></div>
+          </div>
+        </section>
+
+        <section id="cards" class="cards-section">
+          <div class="section-head"><span>★ MEMORY CARDS ★</span><small>CLICK TO OPEN</small></div>
+          <div id="cardsGrid" class="cards-grid"></div>
+        </section>
+
+        
+        <section id="finalUnlock" class="final-unlock win-box">
+          <div class="box-head">★ SPECIAL FILE • AVAILABLE ANYTIME ★</div>
+          <div class="final-inner">
+            <div class="final-lock">🔒</div>
+            <div>
+              <div class="tiny blink">★ SPECIAL FILE • AVAILABLE ANYTIME ★</div>
+              <h3>THERE IS STILL ONE FILE LEFT...</h3>
+              <p id="finalStatus">MEMORY FILES OPENED: <b>0 / 0</b></p>
+              <button id="finalBtn" class="final-button ready">♥ OPEN THE LOVE FILE ♥</button>
+            </div>
+          </div>
+          <div id="love-file" class="love-file-inside hidden" aria-label="The Love File">
+            <div class="love-file-window">
+              <div class="love-file-titlebar"><span>♥ THE LOVE FILE ♥</span><span>PRIVATE MEMORY.EXE</span></div>
+              <div class="love-file-body">
+                <div class="love-photo-frame">
+                  <img src="love-photo.jpg" alt="Uma foto nossa" onerror="this.style.display='none';this.parentElement.classList.add('photo-placeholder')">
+                  <div class="photo-placeholder-text">♥ NOSSA FOTO ♥<br><small>love-photo.jpg</small></div>
+                </div>
+                <div class="love-letter">
+                  <h2>Para você, Amor.</h2>
+                  <p>Você chegou até o final! Este site inteiro foi feito para você, com muito carinho por todos os amigos que deixaram uma memória aqui e por mim. Espero que tenha gostado muito da experiência de receber um cartãozinho alá anos 2000!</p>
+                  <p>Obrigada pela parceria, por todos os planos, risadas e todas as pequenas coisas que fazem a vida ser nossa.<br><br>Aproveite seu dia, feliz aniversário!</p>
+                  <p class="love-signature">Te amo,<br><strong>Gi &lt;3</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+<section id="legacy" class="legacy-zone win-box retro-zone-fixed">
+          <div class="box-head" style="text-align:center!important;white-space:nowrap!important;line-height:1!important;letter-spacing:0!important;padding:9px 6px!important;margin:0!important;">★ OLD INTERNET ZONE ★</div>
+          <div class="legacy-grid legacy-grid-3">
+            <div class="retro-app msn-app">
+              <div class="app-title">🟢 RENATINHO'S MSN MESSENGER</div>
+              <div class="msn-body"><div class="msn-avatar">🙂</div><div><b>Renato</b><br><span>online • birthday mode</span><p id="msnTyping">Renatinho is typing...</p></div></div>
+            </div>
+            <div class="retro-app photobooth">
+              <div class="app-title">📸 FRIENDS PHOTO BOOTH</div>
+              <div class="photo-frame slideshow-frame" id="photoFrame"><div id="photoSlideEmpty">NO PHOTOS YET<br><span>THE FRIEND CARDS WILL FILL THIS</span></div><img id="photoSlide" alt="" hidden></div>
+              <div id="photoCaption" class="photo-caption">As fotos dos cartões aparecerão aqui.</div>
+              <div class="photo-controls"><button id="photoPrev" class="pixel-btn">◀</button><button id="photoPlay" class="pixel-btn">▶ SLIDESHOW</button><button id="photoNext" class="pixel-btn">▶</button></div>
+            </div>
+            <div class="retro-app floppy">
+              <div class="app-title">💾 SAVE TO FLOPPY</div><div class="floppy-disc">💾</div>
+              <button id="saveFloppy" class="pixel-btn">SAVE MEMORY</button><div id="floppyStatus">READY</div>
+            </div>
+          </div>
+        </section>
+<section id="future" class="future-section win-box">
+          <div class="box-head">✉️ MESSAGE TO POSTERITY.EXE</div>
+          <div class="future-inner"><h3>RENATO, WRITE TO YOUR FUTURE SELF</h3><p>Esta aba é só dele. Um recado para o Renato do futuro.</p><textarea id="futureMessage" rows="8" maxlength="1200" placeholder="Querido Renato do futuro..."></textarea><div class="future-actions"><button id="saveFuture" class="pixel-btn">💾 SEAL MESSAGE</button><span id="futureStatus">UNSEALED</span></div></div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <span>★ BEST VIEWED AT 800×600 ★</span><span>MADE WITH TABLES, MARQUEES &amp; LOVE</span><span>NO COOKIES • NO ADS • JUST BIRTHDAY</span>
+    </footer>
+  </div>
+</section>
+
+<div id="modal" class="modal hidden" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="card-window" id="cardWindow">
+    <div class="window-title"><span id="modalFile">FRIEND_CARD.EXE</span><button id="closeCard" aria-label="Fechar">X</button></div>
+    <div class="card-opening" id="cardOpening"></div>
+    <div class="card-content" id="cardContent"></div>
+    <div class="music-bar hidden" id="musicBar"><span class="music-eq">♫</span><span id="musicName">NOW PLAYING</span><button id="musicPause">❚❚</button></div>
+  </div>
+</div>
+
+<script src="script.js?v=10"></script>
+</body>
+</html>
