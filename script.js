@@ -5,11 +5,9 @@ let audio=null;
 let currentTrackIndex=0;
 let currentCard=null;
 let opened=new Set();
-let specialCard={id:"final",nome:"GIOVANA",titulo:"THE LOVE FILE",icon:"💚",tipoDeAnimacao:"secret",mensagem:"Você chegou até o final. Este site inteiro foi feito para você, Renato — por todos os amigos que deixaram uma memória aqui e por quem transformou tudo isso em uma pequena cápsula do tempo. Feliz aniversário.",assinatura:"Com amor, Giovana ♥",musica:"",musicaNome:""};
-async function loadLoveFile(){try{const r=await fetch("love-file.json?v=1",{cache:"no-store"});if(r.ok){const x=await r.json();specialCard={...specialCard,...x};}}catch(e){}}
 let musicLibrary=[];
 async function loadMusicLibrary(){try{const r=await fetch("music-library.json?v=1",{cache:"no-store"});if(r.ok){const x=await r.json();musicLibrary=Array.isArray(x.tracks)?x.tracks:[];}}catch(e){musicLibrary=[];}}
-async function loadCards(){await Promise.all([loadLoveFile(),loadMusicLibrary()]);try{const r=await fetch("cards.json?v=1",{cache:"no-store"});cards=r.ok?(await r.json()):[];if(!Array.isArray(cards))cards=[];}catch(e){cards=[];}renderCards();renderPlaylist();window.__renatinhoLoadedCards=cards.map(c=>c.id);window.dispatchEvent(new CustomEvent("renatinho:cards-loaded"));if(window.__refreshPhotoBooth)window.__refreshPhotoBooth();updateFinal();}
+async function loadCards(){await loadMusicLibrary();try{const r=await fetch("cards.json?v=1",{cache:"no-store"});cards=r.ok?(await r.json()):[];if(!Array.isArray(cards))cards=[];}catch(e){cards=[];}renderCards();renderPlaylist();window.__renatinhoLoadedCards=cards.map(c=>c.id);window.dispatchEvent(new CustomEvent("renatinho:cards-loaded"));if(window.__refreshPhotoBooth)window.__refreshPhotoBooth();}
 
 function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 
@@ -183,7 +181,6 @@ function close(){
 }
 startBtn.addEventListener("click",()=>{tone(320,.05);setTimeout(()=>tone(520,.09),55);intro.classList.add("intro-exit");setTimeout(()=>{intro.classList.add("hidden");site.classList.remove("hidden");window.scrollTo(0,0)},550)});
 closeCard.addEventListener("click",close);
-$("#finalBtn")?.addEventListener("click",openFinal);
 modal.addEventListener("click",e=>{if(e.target.classList.contains("modal-backdrop"))close()});
 musicPause.addEventListener("click",()=>{if(audio){if(audio.paused){audio.play();musicPause.textContent="❚❚"}else{audio.pause();musicPause.textContent="▶"}}else{const frame=document.querySelector("#externalMusic");if(frame){frame.scrollIntoView({behavior:"smooth",block:"center"});}}});
 document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",()=>document.getElementById(b.dataset.scroll)?.scrollIntoView({behavior:"smooth"}) ));
@@ -191,33 +188,12 @@ if(!window.matchMedia?.("(hover: none), (pointer: coarse)").matches) document.ad
 const style=document.createElement("style");style.textContent="@keyframes cursorFade{to{transform:translateY(-15px) scale(.2);opacity:0}}.intro-exit{animation:introExit .55s forwards}@keyframes introExit{to{transform:scale(1.04);filter:brightness(2);opacity:0}}";document.head.appendChild(style);
 loadOpened();
 
-function updateFinal(){
-  const total=cards.length;
-  const count=opened.size;
-  const status=$("#finalStatus");
-  const btn=$("#finalBtn");
-  if(status) status.innerHTML=`MEMORY FILES OPENED: <b>${Math.min(count,total)} / ${total}</b>`;
-  if(btn){
-    btn.disabled=false;
-    btn.textContent="♥ OPEN THE LOVE FILE ♥";
-    btn.classList.add("ready");
-  }
-}
 function loadOpened(){
   try{opened=new Set(JSON.parse(localStorage.getItem("renatinho-opened-v9")||"[]"))}catch(e){opened=new Set()}
 }
-function saveOpened(){localStorage.setItem("renatinho-opened-v9",JSON.stringify([...opened]));updateFinal()}
-function openFinal(){
-  tone(260,.08);setTimeout(()=>tone(520,.08),80);setTimeout(()=>tone(880,.12),160);
-  const love=document.querySelector("#love-file");
-  if(love){
-    love.classList.remove("hidden");
-    love.scrollIntoView({behavior:"smooth",block:"start"});
-  }
-}
+function saveOpened(){localStorage.setItem("renatinho-opened-v9",JSON.stringify([...opened]))}
 
 loadCards();
-updateFinal();
 
 function cycleTrack(dir){
   const tracks=window.__tracks||[];if(!tracks.length)return;
